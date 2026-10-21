@@ -13,8 +13,6 @@ const images = [
     "picture-12.jpg",
 ];
 
-document.getElementById("gallery").innerHTML = "Hallo";
-
 function init() {
     render();
     renderDialog();
@@ -30,15 +28,14 @@ function render() {
 
 function getHTMLForButton(i) {
     return `
-        <button class="thumbnail" 
-            type="button">
+        <button class="thumbnail" type="button" onclick="openPhoto(${i})">
             <img src="./assets/img/${images[i]}" alt="Photo ${i + 1}" />
         </button>
     `;
 }
 
 function renderDialog() {
-    document.getElementById("").innerHTML = getHTMLForDialog();
+    document.getElementById("dialog-container").innerHTML = getHTMLForDialog();
 }
 
 function getHTMLForDialog() {
@@ -56,4 +53,18 @@ function getHTMLForDialog() {
             <div id="photo-content" class="photo-content"></div>
         </dialog>
     `;
+}
+
+function openPhoto(i) {
+    document.getElementById("photo-title").innerHTML = images[i];
+
+    document.getElementById("photo-content").innerHTML = `
+        <img src="./assets/img/${images[i]}" alt="Photo ${i + 1}" />
+    `;
+
+    document.getElementById("photo-dialog").showModal();
+}
+
+function closePhoto() {
+    document.getElementById("photo-dialog").close();
 }
