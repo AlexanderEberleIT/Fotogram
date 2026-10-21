@@ -60,12 +60,12 @@ body {
     font-family: "Figtree";
 }
 
-.site-header{
+.site-header {
     padding: 20px 32px;
     background-color: rgb(9, 33, 42);
 }
 
-.brand{
+.brand {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -76,8 +76,58 @@ body {
     text-decoration: none;
 }
 
-.brand img{
+.brand img {
     width: 40px;
     height: 40px;
     object-fit: contain;
+}
+
+.album {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    padding: 100px 24px;
+}
+
+h1 {
+    font-size: 56px;
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+}
+
+.thumbnail {
+    width: 150px;
+    height: 150px;
+    padding: 0;
+    overflow: hidden;
+    border: 2px solid rgb(32, 83, 100);
+    border-radius: 16px;
+    background-color: rgb(11, 37, 46);
+    cursor: pointer;
+    transition: transform 160ms, border-color 160ms;
+}
+
+.thumbnail img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 160ms;
+}
+
+.thumbnail:hover {
+    border-color: rgb(139, 201, 220);
+    transform: translateY(-4px);
+}
+
+.thumbnail:hover img {
+    filter: brightness(1.10);
 }
