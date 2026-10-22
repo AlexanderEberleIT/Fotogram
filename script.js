@@ -60,21 +60,21 @@ function getHTMLForDialog() {
 
             <div id="photo-content" class="photo-content"></div>
 
-            <nav class="photo-navigation">
+            <nav class="photo-navigation" aria-label="Browse photos">
                 <button class="previous-button" type="button"
-                        onclick="previousPhoto()">
+                    onclick="previousPhoto()" aria-label="Previous photo">
                     <img src="./assets/icons/arrow.png" alt="" />
                 </button>
 
-                <p id="photo-counter"></p>
+                    <p id="photo-counter" class="photo-counter"></p>
 
                 <button type="button"
-                        onclick="nextPhoto()">
+                    onclick="nextPhoto()" aria-label="Next photo">
                     <img src="./assets/icons/arrow.png" alt="" />
                 </button>
             </nav>
         </dialog>
-    `;
+        `;
 }
 
 function openPhoto(i) {
