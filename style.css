@@ -112,7 +112,9 @@ h1 {
     border-radius: 16px;
     background-color: rgb(11, 37, 46);
     cursor: pointer;
-    transition: transform 160ms, border-color 160ms;
+    transition:
+        transform 160ms,
+        border-color 160ms;
 }
 
 .thumbnail img {
@@ -129,5 +131,38 @@ h1 {
 }
 
 .thumbnail:hover img {
-    filter: brightness(1.10);
+    filter: brightness(1.1);
+}
+
+.photo-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    margin-top: 24px;
+}
+
+.photo-navigation button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(32, 50, 58);
+    cursor: pointer;
+}
+
+.photo-navigation button:hover {
+    background-color: rgb(73, 48, 51);
+}
+
+.photo-navigation img {
+    width: 24px;
+    height: 24px;
+}
+
+.previous-button img {
+    transform: rotate(180deg);
 }
