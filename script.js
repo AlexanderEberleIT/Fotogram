@@ -45,14 +45,17 @@ function renderDialog() {
 function getHTMLForDialog() {
     return `
         <dialog id="photo-dialog" 
-                class="photo-dialog">
-                    <header class="dialog-header">
-                    <h2 id="photo-title">Bildtitel</h2>
+                class="photo-dialog"
+                onclick="closeOnBackdrop(event)"
+                onkeydown="handleDialogKeydown(event)">
 
-                    <button type="button" 
-                        onclick="closePhoto()">
-                            <img src="./assets/icons/x.png" alt="" />
-                    </button>
+                    <header class="dialog-header">
+                        <h2 id="photo-title">Bildtitel</h2>
+
+                            <button type="button" 
+                                onclick="closePhoto()">
+                                <img src="./assets/icons/x.png" alt="" />
+                            </button>
                     </header>
 
             <div id="photo-content" class="photo-content"></div>
@@ -115,3 +118,20 @@ function nextPhoto() {
 
     updatePhoto();
 }
+
+function closeOnBackdrop(event) {
+    const dialogBounds = document
+        .getElementById("photo-dialog")
+        .getBoundingClientRect();
+
+    const outsideX =
+        event.clientX < dialogBounds.left || event.clientX > dialogBounds.right;
+
+    const outsideY =
+        event.clientY < dialogBounds.top || event.clientY > dialogBounds.bottom;
+
+    if (outsideX || outsideY) {
+        closePhoto();
+    }
+}
+
