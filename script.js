@@ -47,7 +47,7 @@ function getHTMLForDialog() {
         <dialog id="photo-dialog" 
                 class="photo-dialog"
                 onclick="closeOnBackdrop(event)"
-                onkeydown="handleDialogKeydown(event)">
+                onkeydown="dialogKeydown(event)">
 
                     <header class="dialog-header">
                         <h2 id="photo-title">Bildtitel</h2>
@@ -135,3 +135,14 @@ function closeOnBackdrop(event) {
     }
 }
 
+function dialogKeydown(event) {
+    if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        previousPhoto();
+    }
+
+    if (event.key === "ArrowRight") {
+        event.preventDefault();
+        nextPhoto();
+    }
+}
