@@ -246,3 +246,22 @@ h1 {
     width: 16px;
     height: 16px;
 }
+
+.site-footer {
+    padding: 32px 24px;
+    background-color: rgb(9, 33, 42);
+    text-align: center;
+}
+
+.academy-logo {
+    display: block;
+    width: 40px;
+    height: 30px;
+    margin: 0 auto;
+}
+
+.copyright {
+    margin-top: 12px;
+    color: rgb(138, 157, 165);
+    font-size: 12px;
+}

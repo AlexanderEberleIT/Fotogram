@@ -46,7 +46,7 @@ function getHTMLForDialog() {
     return `
         <dialog id="photo-dialog" 
                 class="photo-dialog"
-                onclick="closeOnBackdrop(event)"
+                onclick="closeOnBackclick(event)"
                 onkeydown="dialogKeydown(event)">
 
                     <header class="dialog-header">
@@ -119,7 +119,7 @@ function nextPhoto() {
     updatePhoto();
 }
 
-function closeOnBackdrop(event) {
+function closeOnBackclick(event) {
     const dialogBounds = document
         .getElementById("photo-dialog")
         .getBoundingClientRect();
