@@ -13,6 +13,21 @@ const images = [
     "picture-12.jpg",
 ];
 
+const imageDescriptions = [
+    "Schneebedeckte Berge an einem türkisfarbenen See",
+    "Beleuchtete Straße bei Nacht mit Spiegelungen auf dem Boden",
+    "Dunkle Gewitterwolken mit durchscheinendem Sonnenlicht",
+    "Eine Blaumeise auf einem Ast",
+    "Ein Hurrikan aus dem Weltraum betrachtet",
+    "Verschneite Berge spiegeln sich in einem ruhigen See",
+    "Eine Ente schwimmt auf blauem Wasser",
+    "Eine Person auf einem Felsen unter dem Sternenhimmel",
+    "Ein kleiner heller Vogel auf dunklen Felsen",
+    "Ein junger Schneeleopard auf moosbewachsenen Felsen",
+    "Sonnenlicht auf schneebedeckten Berggipfeln",
+    "Ein einzelner vereister Baum in einer Schneelandschaft",
+];
+
 let currentIndex = 0;
 
 function init() {
@@ -33,7 +48,7 @@ function getHTMLForButton(i) {
         <button class="thumbnail" 
             type="button" 
             onclick="openPhoto(${i})">
-                <img src="./assets/img/${images[i]}" alt="Photo ${i + 1}" />
+                <img src="./assets/img/${images[i]}" alt="${imageDescriptions[i]}" />
         </button>
     `;
 }
@@ -84,11 +99,11 @@ function openPhoto(i) {
 }
 
 function updatePhoto() {
-    document.getElementById("photo-title").innerHTML = images[currentIndex];
+    document.getElementById("photo-title").innerHTML = imageDescriptions[currentIndex];
 
     document.getElementById("photo-content").innerHTML = `
         <img src="./assets/img/${images[currentIndex]}"
-            alt="Photo ${currentIndex + 1}" />
+            alt="${imageDescriptions[currentIndex]}" />
     `;
 
     document.getElementById("photo-counter").innerHTML =
