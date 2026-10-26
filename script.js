@@ -67,8 +67,10 @@ function getHTMLForDialog() {
                     <header class="dialog-header">
                         <h2 id="photo-title">Bildtitel</h2>
 
-                            <button type="button" 
-                                onclick="closePhoto()">
+                            <button
+                                type="button"
+                                onclick="closePhoto()"
+                                aria-label="Foto schließen">
                                 <img src="./assets/icons/x.png" alt="" />
                             </button>
                     </header>
@@ -89,7 +91,7 @@ function getHTMLForDialog() {
                 </button>
             </nav>
         </dialog>
-        `;
+            `;
 }
 
 function openPhoto(i) {
@@ -99,7 +101,8 @@ function openPhoto(i) {
 }
 
 function updatePhoto() {
-    document.getElementById("photo-title").innerHTML = imageDescriptions[currentIndex];
+    document.getElementById("photo-title").innerHTML =
+        imageDescriptions[currentIndex];
 
     document.getElementById("photo-content").innerHTML = `
         <img src="./assets/img/${images[currentIndex]}"
