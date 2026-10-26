@@ -88,7 +88,8 @@ function getHTMLForDialog() {
                     <p id="photo-counter" class="photo-counter" aria-live="polite" aria-atomic="true"></p>
 
                 <button type="button"
-                    onclick="nextPhoto()" aria-label="Next photo">
+                    onclick="nextPhoto()"
+                    aria-label="Next photo">
                     <img src="./assets/icons/arrow.png" alt="" />
                 </button>
             </nav>

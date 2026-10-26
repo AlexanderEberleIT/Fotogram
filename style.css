@@ -127,8 +127,8 @@ h1 {
     background-color: rgb(11, 37, 46);
     cursor: pointer;
     transition:
-        transform 160ms,
-        border-color 160ms;
+    transform 160ms,
+    border-color 160ms;
 }
 
 .thumbnail img {
@@ -203,9 +203,9 @@ h1 {
 }
 
 .photo-dialog {
-    width: 90%;
+    width: 100%;
     max-width: 480px;
-    height: 85dvh;
+    height: 100dvh;
     max-height: 700px;
     margin: auto;
     padding: 24px;
@@ -288,6 +288,27 @@ h1 {
     margin-top: 12px;
     color: rgb(138, 157, 165);
     font-size: 12px;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid rgb(139, 201, 220);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto;
+        animation-duration: 0.01ms;
+        animation-iteration-count: 1;
+        transition-duration: 0.01ms;
+    }
+
+    .thumbnail:hover {
+        transform: none;
+    }
 }
 
 @media (max-width: 480px) {
