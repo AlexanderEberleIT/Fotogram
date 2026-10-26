@@ -45,12 +45,25 @@ function render() {
 
 function getHTMLForButton(i) {
     return `
-        <button class="thumbnail" 
-            type="button" 
-            onclick="openPhoto(${i})"
-            aria-label="${imageDescriptions[i]}">
-                <img src="./assets/img/${images[i]}" alt="${imageDescriptions[i]}" />
-        </button>
+        <figure class="photo-figure">
+            <button
+                class="thumbnail"
+                type="button"
+                onclick="openPhoto(${i})"
+                aria-label="Foto ${i + 1} öffnen"
+                aria-describedby="image-caption-${i}">
+                <img
+                    src="./assets/img/${images[i]}"
+                    alt="" />
+            </button>
+
+            <figcaption
+                id="image-caption-${i}"
+                class="visually-hidden"
+                lang="de">
+                ${imageDescriptions[i]}
+            </figcaption>
+        </figure>
     `;
 }
 
@@ -80,18 +93,26 @@ function getHTMLForDialog() {
             <div id="photo-content" class="photo-content"></div>
 
             <nav class="photo-navigation" aria-label="Browse photos">
-                <button class="previous-button" type="button"
-                    onclick="previousPhoto()" aria-label="Previous photo">
-                    <img src="./assets/icons/arrow.png" alt="" />
-                </button>
+                <ul class="photo-navigation-list">
+                    <li>
+                        <button class="previous-button" type="button"
+                            onclick="previousPhoto()" aria-label="Previous photo">
+                            <img src="./assets/icons/arrow.png" alt="" />
+                        </button>
+                    </li>
 
-                    <p id="photo-counter" class="photo-counter" aria-live="polite" aria-atomic="true"></p>
+                    <li>
+                        <p id="photo-counter" class="photo-counter"
+                        aria-live="polite" aria-atomic="true"></p>
+                    </li>
 
-                <button type="button"
-                    onclick="nextPhoto()"
-                    aria-label="Next photo">
-                    <img src="./assets/icons/arrow.png" alt="" />
-                </button>
+                    <li>
+                        <button type="button" onclick="nextPhoto()"
+                            aria-label="Next photo">
+                            <img src="./assets/icons/arrow.png" alt="" />
+                        </button>
+                    </li>
+                </ul>
             </nav>
         </dialog>
             `;
