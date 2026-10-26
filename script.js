@@ -47,7 +47,8 @@ function getHTMLForButton(i) {
     return `
         <button class="thumbnail" 
             type="button" 
-            onclick="openPhoto(${i})">
+            onclick="openPhoto(${i})"
+            aria-label="${imageDescriptions[i]}">
                 <img src="./assets/img/${images[i]}" alt="${imageDescriptions[i]}" />
         </button>
     `;
@@ -61,6 +62,7 @@ function getHTMLForDialog() {
     return `
         <dialog id="photo-dialog" 
                 class="photo-dialog"
+                aria-labelledby="photo-title"
                 onclick="closeOnBackclick(event)"
                 onkeydown="dialogKeydown(event)">
 
@@ -83,7 +85,7 @@ function getHTMLForDialog() {
                     <img src="./assets/icons/arrow.png" alt="" />
                 </button>
 
-                    <p id="photo-counter" class="photo-counter"></p>
+                    <p id="photo-counter" class="photo-counter" aria-live="polite" aria-atomic="true"></p>
 
                 <button type="button"
                     onclick="nextPhoto()" aria-label="Next photo">
