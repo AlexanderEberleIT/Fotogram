@@ -366,12 +366,12 @@ a:focus-visible {
     }
 
     .gallery {
-        max-width: 324px;
+        max-width: 350px;
         gap: 16px;
     }
 
     .thumbnail {
-        width: calc((100% - 16px) / 2);
+        width: 100%;
         height: auto;
         aspect-ratio: 1;
         border-radius: 12px;
@@ -382,7 +382,7 @@ a:focus-visible {
     }
 
     .academy-logo {
-        width: 30px;
+        width: 25px;
         height: 20px;
     }
 
@@ -392,8 +392,8 @@ a:focus-visible {
 
     .photo-dialog {
         width: calc(100% - 32px);
-        height: 75dvh;
-        max-height: 640px;
+        height: 100dvh;
+        max-height: 600px;
         padding: 20px;
         border-radius: 28px;
     }
@@ -424,7 +424,7 @@ a:focus-visible {
     }
 }
 
-@media (min-width: 481px) and (max-width: 734px) {
+@media (min-width: 481px) and (max-width: 740px) {
     .header-content {
         display: flex;
         justify-content: center;
