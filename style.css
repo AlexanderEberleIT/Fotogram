@@ -424,7 +424,7 @@ a:focus-visible {
     }
 }
 
-@media (min-width: 481px) and (max-width: 740px) {
+@media (min-width: 481px) and (max-width: 734px) {
     .header-content {
         display: flex;
         justify-content: center;
